@@ -174,7 +174,7 @@ function Rocket(dna) {
       this.crashed = true;
     }
 
-    if (this.pos.y > width || this.pos.y < 0) {
+    if (this.pos.y > height || this.pos.y < 0) {
       this.crashed = true;
     }
 
