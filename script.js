@@ -1,6 +1,8 @@
 // let rocket;
 let population;
+let generationsCount = 0;
 let lifeP;
+let generationP;
 let count = 0;
 let target;
 const lifespan = 400;
@@ -16,6 +18,7 @@ function setup() {
   // rocket = new Rocket();
   population = new Population();
   lifeP = createP();
+  generationP = createP();
   target = createVector(width / 2, 50);
 }
 
@@ -23,12 +26,14 @@ function draw() {
   background(0);
   population.run();
   lifeP.html(count);
+  generationP.html(generationsCount);
   count++;
 
   if (count === lifespan) {
     population.evaluate();
     population.selection();
     count = 0;
+    generationsCount++;
   }
 
   fill(255);
